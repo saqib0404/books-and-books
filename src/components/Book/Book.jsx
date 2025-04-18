@@ -26,7 +26,7 @@ const Book = ({ book }) => {
                         <div className="badge badge-outline">{category}</div>
                         <div className="rating">
                             <input type="radio" name="rating-5" className="mask mask-star-2 bg-green-800" />
-                            <input type="radio" name="rating-5" className="mask mask-star-2 bg-green-800" checked />
+                            <input type="radio" name="rating-5" className="mask mask-star-2 bg-green-800" />
                             <input type="radio" name="rating-5" className="mask mask-star-2 bg-green-800" />
                             <input type="radio" name="rating-5" className="mask mask-star-2 bg-green-800" />
                             <input type="radio" name="rating-5" className="mask mask-star-2 bg-green-800" />
