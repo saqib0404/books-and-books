@@ -1,12 +1,14 @@
 import React from 'react'
 import { useLoaderData, useParams } from 'react-router'
+import { addToWishList } from '../../Utilities/AddToWish';
 
 const BookDetail = () => {
     const { bookId } = useParams();
     const booksDetail = useLoaderData();
 
     const detail = booksDetail.find(book => book.bookId === Number(bookId))
-    const { yearOfPublishing, publisher, tags, category, rating, review, image, author, bookName } = detail
+    const { yearOfPublishing, publisher, tags, category, rating, review, image, author, bookName, totalPages } = detail
+
 
     return (
         <div className="hero min-h-[711px] my-5">
@@ -22,15 +24,33 @@ const BookDetail = () => {
                     <span className='text-xl'>{category}</span>
                     <div className="divider mt-[0px]"></div>
                     <p><span className='font-bold'>Review</span>: {review}</p>
-                    <p className="flex gap-2 items-center my-4"><span className='font-bold'>Tag</span>
+                    <span className="flex gap-2 items-center my-4"><span className='font-bold'>Tag</span>
                         {
-                            tags.map((tag, idx) => <p key={idx} className="text-green-600 font-semibold text-center px-6 py-1 rounded-2xl bg-green-100">
+                            tags.map((tag, idx) => <span key={idx} className="text-green-600 font-semibold text-center px-6 py-1 rounded-2xl bg-green-100">
                                 #{tag}
-                            </p>)
+                            </span>)
                         }
-                    </p>
+                    </span>
                     <div className="divider mb-[0px]"></div>
-                    <button className="btn btn-primary">Get Started</button>
+
+                    <div className='flex gap-10'>
+                        <div className='text-gray-500'>
+                            <p>Number of Pages:</p>
+                            <p>Publisher:</p>
+                            <p>Year of Publishing:</p>
+                            <p>Rating:</p>
+                        </div>
+                        <div>
+                            <p>{totalPages}</p>
+                            <p>{publisher}</p>
+                            <p>{yearOfPublishing}</p>
+                            <p>{rating}</p>
+                        </div>
+                    </div>
+                    <div className='mt-2'>
+                        <button className="btn mr-2">Read</button>
+                        <button onClick={() => addToWishList(bookId)} className="btn bg-teal-500 text-white">Wishlist</button>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,12 +1,16 @@
-import React from 'react'
-import { NavLink } from 'react-router'
+import { Link, NavLink } from 'react-router'
+import "./Navbar.css"
 
 const NavBar = () => {
     const items =
         <>
-            <li><NavLink to="/">Home</NavLink></li>
-            <li><NavLink>Listed Books</NavLink></li>
-            <li><NavLink>Pages to Read</NavLink></li>
+            <li><NavLink to="/"
+                className={({ isActive }) =>
+                    isActive ? "active" : ""
+                }
+            >Home</NavLink></li>
+            <li><NavLink to="listed-books">Listed Books</NavLink></li>
+            <li><NavLink to="as">Pages to Read</NavLink></li>
         </>
 
     return (
@@ -33,7 +37,7 @@ const NavBar = () => {
                         {items}
                     </ul>
                 </div>
-                <span className="btn font-bold btn-ghost text-xl"><NavLink to="/">Book Vibe</NavLink></span>
+                <span className="btn font-bold btn-ghost text-xl"><Link to="/" >Book Vibe</Link></span>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
