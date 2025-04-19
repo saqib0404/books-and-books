@@ -24,7 +24,18 @@ const router = createBrowserRouter([
         path: "books/:bookId",
         element: <BookDetail />,
         loader: async () => {
-          return fetch("./booksData.json");
+          const res = await fetch('./booksData.json');
+          return await res.json();
+          // return fetch("./booksData.json");
+        },
+      },
+      {
+        path: "listed-books/books/:bookId",
+        element: <BookDetail />,
+        loader: async () => {
+          const res = await fetch('./booksData.json');
+          return await res.json();
+          // return fetch("./booksData.json");
         },
       },
       {
@@ -34,7 +45,9 @@ const router = createBrowserRouter([
       {
         path: "listed-books",
         loader: async () => {
-          return fetch("./booksData.json");
+          const res = await fetch('./booksData.json');
+          return await res.json();
+          // return fetch("./booksData.json");
         },
         element: <ListedBooks />,
       },

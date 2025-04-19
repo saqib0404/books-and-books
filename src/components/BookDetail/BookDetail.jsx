@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useLoaderData, useParams } from 'react-router'
 import { addToWishList } from '../../Utilities/AddToWish';
 

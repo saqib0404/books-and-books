@@ -5,12 +5,12 @@ const NavBar = () => {
     const items =
         <>
             <li><NavLink to="/"
-                className={({ isActive }) =>
-                    isActive ? "active" : ""
+                className={`hover:bg-white ${({ isActive }) =>
+                    isActive ? "active" : ""}`
                 }
             >Home</NavLink></li>
-            <li><NavLink to="listed-books">Listed Books</NavLink></li>
-            <li><NavLink to="as">Pages to Read</NavLink></li>
+            <li><NavLink className="hover:bg-white" to="listed-books">Listed Books</NavLink></li>
+            <li><NavLink className="hover:bg-white" to="dashboard">Pages to Read</NavLink></li>
         </>
 
     return (

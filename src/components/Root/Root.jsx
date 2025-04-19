@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import NavBar from '../NavBar/NavBar'
 import { Outlet } from 'react-router'
 import Footer from '../Footer/Footer'
@@ -9,7 +9,9 @@ const Root = () => {
         <div className='max-w-6xl mx-auto mt-2'>
             <ScrollToTop />
             <NavBar />
-            <Outlet />
+            <Suspense fallback={<div>Loading...</div>}>
+                <Outlet />
+            </Suspense>
             <Footer />
         </div>
     )
