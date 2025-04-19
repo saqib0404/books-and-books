@@ -9,7 +9,6 @@ const BookDetail = () => {
     const detail = booksDetail.find(book => book.bookId === Number(bookId))
     const { yearOfPublishing, publisher, tags, category, rating, review, image, author, bookName, totalPages } = detail
 
-
     return (
         <div className="hero min-h-[711px] my-5">
             <div className="hero-content flex-col lg:flex-row">
